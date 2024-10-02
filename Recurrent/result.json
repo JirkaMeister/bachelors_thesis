@@ -1,0 +1,3 @@
+[{"model": "RNN", "accuracy": 95.66, "samples": 10},
+{"model": "GRU", "accuracy": 98.966, "samples": 10},
+{"model": "LSTM", "accuracy": 98.861, "samples": 10}]
