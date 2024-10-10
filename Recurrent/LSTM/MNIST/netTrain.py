@@ -6,7 +6,7 @@ import torch.optim as optim
 import torch.nn as nn
 import torch.functional as F
 import torch
-
+from time import time
 
 trainingData = datasets.MNIST(
     root = LSTM.root,
@@ -14,6 +14,8 @@ trainingData = datasets.MNIST(
     download = True,
     transform = ToTensor()
 )
+
+startTime = time()
 
 trainingLoader = DataLoader(trainingData, batch_size = 64, shuffle = True)
 
@@ -43,3 +45,4 @@ for epoch in range(LSTM.num_epochs):
         optimizer.step()
 
 torch.save(model.state_dict(), "trainedNetwork.pth")
+print(f"Training took {time() - startTime} seconds")

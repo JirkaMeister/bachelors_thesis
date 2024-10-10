@@ -14,7 +14,8 @@ batch_size = 64
 num_epochs = 10
 root = "../../../data"
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
+#device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class ModelLSTM(NN.Module):
     def __init__(self, input_size, hidden_size, num_layers, num_classes):
